@@ -1,5 +1,5 @@
-// import { combineReducers } from "redux";
+import { contacts } from "../static-data";
 
-export default (state, action) => {
+export default (state = { contacts }, action) => {
   return state;
 };
