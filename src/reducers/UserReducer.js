@@ -1,5 +1,5 @@
 import { generateUser } from "../static-data";
 
-export default (user = (state = generateUser(), action) => {
+export default (state = generateUser(), action) => {
   return state;
-});
+};
