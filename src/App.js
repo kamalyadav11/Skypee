@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import _ from "lodash";
+
 import "./App.css";
 import SideBar from "./components/SideBar";
 import Main from "./components/Main";
@@ -10,7 +12,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <SideBar contacts={contacts} />
+        <SideBar contacts={_.values(contacts)} />
         <Main />
       </div>
     );
@@ -18,4 +20,3 @@ class App extends Component {
 }
 
 export default App;
-//TODO: Add git remote respository
