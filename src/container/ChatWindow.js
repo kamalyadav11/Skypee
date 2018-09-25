@@ -1,8 +1,14 @@
 import React from "react";
 
+import store from "../store";
+import Header from "../components/Header";
+
 const ChatWindow = ({ activeUserID }) => {
+  const activeUser = store.getState().contacts[activeUserID];
   return (
-    <div className="ChatWindow">Converstaion for user id: {activeUserID}</div>
+    <div className="ChatWindow">
+      <Header user={activeUser} />
+    </div>
   );
 };
 
