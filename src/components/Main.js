@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 
 import EmptyMain from "./EmptyMain";
 import ChatWindow from "../container/ChatWindow";
@@ -15,4 +16,9 @@ const Main = ({ user, activeUserId }) => {
   return <main className="Main">{renderMainContent()}</main>;
 };
 
-export default Main;
+const mapStateToProps = state => ({
+  user: state.user,
+  activeUserId: state.activeUserId
+});
+
+export default connect(mapStateToProps)(Main);

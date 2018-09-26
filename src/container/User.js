@@ -1,28 +1,38 @@
 import React from "react";
+import { connect } from "react-redux";
 
-import store from "../store";
 import "./User.css";
 import { setActiveUserId } from "../actions";
+import { bindActionCreators } from "redux";
 
-/**
- *
- * whenever the user(you) clicks on any of the Users(in the SideBar) then id of user(in the sidebar) will be set equal to active user_id
- */
-const User = ({ user }) => {
-  const { name, profile_pic, status } = user;
-  return (
-    <div className="User" onClick={handleUserClick.bind(null, user)}>
-      <img src={profile_pic} alt={name} className="User__pic" />
-      <div className="User__details">
-        <p className="User__details-name">{name}</p>
-        <p className="User__details-status">{status}</p>
+class User extends React.Component {
+  handleUserClick = () => {
+    // store.dispatch(setActiveUserId(user_id));
+    this.props.setActiveUserId(this.props.user.user_id);
+  };
+  render() {
+    const { name, profile_pic, status } = this.props.user;
+    return (
+      <div className="User" onClick={this.handleUserClick}>
+        <img src={profile_pic} alt={name} className="User__pic" />
+        <div className="User__details">
+          <p className="User__details-name">{name}</p>
+          <p className="User__details-status">{status}</p>
+        </div>
       </div>
-    </div>
-  );
-};
-
-function handleUserClick({ user_id }) {
-  store.dispatch(setActiveUserId(user_id));
+    );
+  }
 }
 
-export default User;
+const mapStateToProps = state => ({
+  activeUserId: state.activeUserId
+});
+
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({ setActiveUserId }, dispatch);
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(User);
