@@ -14,8 +14,7 @@
 .User__details {
   display: none;
 }
-/* not small devices
-  */
+/* not small devices*/
 @media (min-width: 576px) {
   .User__details {
     display: block;

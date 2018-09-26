@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 import "./Chats.css";
 
 const Chat = ({ message }) => {
@@ -12,7 +11,6 @@ const Chat = ({ message }) => {
 class Chats extends Component {
   constructor(props) {
     super(props);
-
     this.chatsRef = React.createRef();
   }
 
@@ -30,12 +28,10 @@ class Chats extends Component {
 
   render() {
     return (
-      <div>
-        <div className="Chats" ref={this.chatsRef}>
-          {this.props.messages.map(message => (
-            <Chat message={message} key={message.number} />
-          ))}
-        </div>
+      <div className="Chats" ref={this.chatsRef}>
+        {this.props.messages.map(message => (
+          <Chat message={message} key={message.number} />
+        ))}
       </div>
     );
   }
