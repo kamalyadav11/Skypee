@@ -1,16 +1,15 @@
 import React from "react";
 import _ from "lodash";
+import { connect } from "react-redux";
 
-import store from "../store";
 import ChatHeader from "../components/ChatHeader";
 import MessageInput from "./MessageInput";
 import Chats from "./Chats";
 import "./ChatWindow.css";
 
-const ChatWindow = ({ activeUserId }) => {
-  const state = store.getState();
-  const activeUser = state.contacts[activeUserId];
-  const activeMessages = state.messages[activeUserId];
+const ChatWindow = props => {
+  const activeUser = props.contacts[props.activeUserId];
+  const activeMessages = props.messages[props.activeUserId];
   return (
     <div className="ChatWindow">
       <ChatHeader user={activeUser} />
@@ -20,4 +19,9 @@ const ChatWindow = ({ activeUserId }) => {
   );
 };
 
-export default ChatWindow;
+const mapStateToProps = state => ({
+  contacts: state.contacts,
+  messages: state.messages
+});
+
+export default connect(mapStateToProps)(ChatWindow);
