@@ -13,8 +13,6 @@ const MessageInput = props => {
   const handleSubmit = e => {
     e.preventDefault();
     props.sendMessage(props.typing, props.activeUserId);
-    console.log(props.typing);
-    // console.log(props.messages);
   };
 
   return (
@@ -31,8 +29,7 @@ const MessageInput = props => {
 
 const mapStateToProps = state => ({
   typing: state.typing,
-  activeUserId: state.activeUserId,
-  messages: state.messages
+  activeUserId: state.activeUserId
 });
 
 const mapDispatchToProps = dispatch => {
