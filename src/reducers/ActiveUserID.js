@@ -1,6 +1,6 @@
 import { SET_ACTIVE_USER_ID } from "../constants/action-types";
 
-const activeUserID = (state = null, action) => {
+const activeUserId = (state = null, action) => {
   switch (action.type) {
     case SET_ACTIVE_USER_ID:
       return action.payload;
@@ -9,4 +9,4 @@ const activeUserID = (state = null, action) => {
   }
 };
 
-export default activeUserID;
+export default activeUserId;

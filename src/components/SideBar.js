@@ -1,4 +1,6 @@
 import React from "react";
+import _ from "lodash";
+import { connect } from "react-redux";
 
 import "./SideBar.css";
 import User from "../container/User";
@@ -6,11 +8,15 @@ import User from "../container/User";
 const SideBar = ({ contacts }) => {
   return (
     <aside className="Sidebar">
-      {contacts.map(contact => (
+      {_.values(contacts).map(contact => (
         <User key={contact.user_id} user={contact} />
       ))}
     </aside>
   );
 };
 
-export default SideBar;
+const mapStateToProps = state => ({
+  contacts: state.contacts
+});
+
+export default connect(mapStateToProps)(SideBar);

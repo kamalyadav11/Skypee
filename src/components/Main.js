@@ -1,15 +1,15 @@
 import React from "react";
 
 import EmptyMain from "./EmptyMain";
-import ChatWindow from "./ChatWindow";
+import ChatWindow from "../container/ChatWindow";
 import "./Main.css";
 
-const Main = ({ user, activeUserID }) => {
+const Main = ({ user, activeUserId }) => {
   const renderMainContent = () => {
-    if (!activeUserID) {
-      return <EmptyMain user={user} activeUserID={activeUserID} />;
+    if (!activeUserId) {
+      return <EmptyMain user={user} activeUserId={activeUserId} />;
     } else {
-      return <ChatWindow activeUserID={activeUserID} />;
+      return <ChatWindow activeUserId={activeUserId} />;
     }
   };
   return <main className="Main">{renderMainContent()}</main>;

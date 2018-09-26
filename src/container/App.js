@@ -1,19 +1,18 @@
 import React, { Component } from "react";
-import _ from "lodash";
 
 import "./App.css";
 import SideBar from "../components/SideBar";
 import Main from "../components/Main";
 import store from "../store";
 
-const { contacts, user, activeUserID } = store.getState();
+const { user, activeUserId } = store.getState();
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <SideBar contacts={_.values(contacts)} />
-        <Main user={user} activeUserID={activeUserID} />
+        <SideBar />
+        <Main user={user} activeUserId={activeUserId} />
       </div>
     );
   }

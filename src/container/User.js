@@ -8,11 +8,6 @@ import { setActiveUserId } from "../actions";
  *
  * whenever the user(you) clicks on any of the Users(in the SideBar) then id of user(in the sidebar) will be set equal to active user_id
  */
-function handleUserClick({ user_id }) {
-  store.dispatch(setActiveUserId(user_id));
-  console.log(user_id);
-}
-
 const User = ({ user }) => {
   const { name, profile_pic, status } = user;
   return (
@@ -25,5 +20,9 @@ const User = ({ user }) => {
     </div>
   );
 };
+
+function handleUserClick({ user_id }) {
+  store.dispatch(setActiveUserId(user_id));
+}
 
 export default User;
