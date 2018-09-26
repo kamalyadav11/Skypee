@@ -1,22 +1,37 @@
 import React from "react";
-import store from "../store";
+import { connect } from "react-redux";
+
 import { setTypingValue } from "../actions";
 import "./MessageInput.css";
+import { bindActionCreators } from "redux";
 
-const MessageInput = ({ value }) => {
+const MessageInput = props => {
   const handleChange = e => {
-    store.dispatch(setTypingValue(e.target.value));
+    e.preventDefault();
+    props.setTypingValue(e.target.value);
   };
+
   return (
     <form className="Message">
       <input
         className="Message__input"
         onChange={handleChange}
-        value={value}
+        value={props.typing}
         placeholder="Type a message"
       />
     </form>
   );
 };
 
-export default MessageInput;
+const mapStateToProps = state => ({
+  typing: state.typing
+});
+
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({ setTypingValue }, dispatch);
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MessageInput);
