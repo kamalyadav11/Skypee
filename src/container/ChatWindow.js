@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 import ChatHeader from "../components/ChatHeader";
 import MessageInput from "./MessageInput";
-import Chats from "./Chats";
+import Chats from "../components/Chats";
 import "./ChatWindow.css";
 
 const ChatWindow = props => {

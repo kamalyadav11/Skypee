@@ -3,7 +3,7 @@ import _ from "lodash";
 import { connect } from "react-redux";
 
 import "./SideBar.css";
-import User from "../container/User";
+import User from "./User";
 
 const SideBar = ({ contacts }) => {
   return (
