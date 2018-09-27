@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import EmptyMain from "../components/EmptyMain";
-import ChatWindow from "./ChatWindow";
+import EmptyMain from "../../components/MainScreen/EmptyMain";
+import ChatWindow from "../ChatWindow/ChatWindow";
 import "./Main.css";
 
 const Main = ({ user, activeUserId }) => {

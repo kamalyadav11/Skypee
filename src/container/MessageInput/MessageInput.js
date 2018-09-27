@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { setTypingValue, sendMessage } from "../actions";
+import { setTypingValue, sendMessage } from "../../actions";
 import "./MessageInput.css";
 import { bindActionCreators } from "redux";
 

@@ -2,9 +2,9 @@ import React from "react";
 import _ from "lodash";
 import { connect } from "react-redux";
 
-import ChatHeader from "../components/ChatHeader";
-import MessageInput from "./MessageInput";
-import Chats from "../components/Chats";
+import ChatHeader from "../../components/ChatSection/ChatHeader";
+import MessageInput from "../MessageInput/MessageInput";
+import Chats from "../../components/ChatSection/Chats";
 import "./ChatWindow.css";
 
 const ChatWindow = props => {

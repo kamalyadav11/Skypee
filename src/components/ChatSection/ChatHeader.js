@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./ChatHeader.css";
+import "./styles/ChatHeader.css";
 
 function ChatHeader({ user }) {
   const { name, status } = user;
