@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
 
-import user from "./UserReducer";
-import contacts from "./ContactReducer";
-import activeUserId from "./ActiveUserID";
-import messages from "./messages";
-import typing from "./TypingReducer";
+import user from "./userReducer";
+import typing from "./typingReducer";
+import contacts from "./contactReducer";
+import messages from "./messagesReducer";
+import activeUserId from "./activeUserIdReducer";
 
 export default combineReducers({
   user,
